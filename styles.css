@@ -1,0 +1,277 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    background-color: black; /* Solid background for fallback */
+    background-image: url('your-galaxy-image.jpg'); /* Replace with your galaxy image */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly more opaque navbar */
+    padding: 15px;
+    position: fixed; /* Make navbar fixed to the top */
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid rgba(255, 204, 0, 0.5); /* Visible bottom border */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; /* Align items in a row */
+}
+
+nav ul li {
+    margin-right: 20px; /* Space between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px; /* Add padding for box effect */
+    border: 2px solid transparent; /* Transparent border for hover effect */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5); /* Added shadow */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 204, 0, 0.5); /* Highlight color on hover */
+    border-color: rgba(255, 204, 0, 0.7); /* Border color on hover */
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8); /* Enhance glow and shadow on hover */
+}
+/* Home Section Styles */
+.home-section {
+    display: flex;
+    height: calc(100vh - 70px); /* Adjust height to account for the navbar */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    margin-top: 70px; /* Add margin to separate from navbar */
+}
+
+.left-side h1 {
+    font-size: 50px;
+}
+.domain-animation {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-top: 20px; /* Space above the text */
+    text-align: left; /* Align text to the left */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+}
+/* Profile Photo Floating Shadow on Ground */
+.profile-photo {
+    margin-right:80px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 
+        0 0 45px rgba(255, 0, 255, 0.5), /* Existing glow shadows */
+        0 0 45px rgba(0, 255, 255, 0.5), 
+        0 0 45px rgba(255, 255, 0, 0.5), 
+        10px 25px 30px rgba(152, 128, 128, 0.4); /* Ground shadow shifted to the right */
+}
+
+.profile-photo:hover {
+    filter: brightness(1);
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 60px rgba(255, 0, 255, 0.8), 
+        0 0 60px rgba(0, 255, 255, 0.8), 
+        0 0 60px rgba(255, 255, 0, 0.8),
+        35px 100px 140px rgba(64, 158, 177, 0.6); /* Enhanced ground shadow effect on hover */
+}
+
+
+/* Welcome Line Styles */
+.welcome-line {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed; /* Fixed position initially */
+    top: 50%; /* Start in the center vertically */
+    left: 35%; /* Position to the left side */
+    transform: translateY(-50%); /* Center it vertically */
+    text-align: center;
+    color: rgba(216, 226, 26, 0.8); /* Soft yellow text */
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 5; /* Above the stars, below the magic cursor */
+    opacity: 0.9; /* Start hidden */
+    transition: opacity 1s ease, top 1s ease, left 1s ease; /* Smooth transition for opacity and movement */
+}
+
+/* Animation for showing the welcome line */
+.show {
+    opacity: 1; /* Ensure it stays visible */
+}
+
+/* New class for the final position of the welcome line */
+.welcome-line.move {
+    top: 60px; /* Position just below the navbar */
+    left: 20px; /* Position on the left side */
+    transform: none; /* Remove centering transform */
+}
+
+/* Projects Section Styles */
+.projects-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for project section */
+    border-radius: 10px; /* Add border radius for a smoother look */
+}
+
+/* Individual Project Box Styles */
+.project-box {
+    width: 45%; /* Adjust width to your preference */
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background */
+    padding: 20px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    position: relative; /* Set position for hover effects */
+    overflow: hidden; /* Hide overflow for image scaling effect */
+}
+
+/* Hover Effect for Project Box */
+.project-box:hover {
+    background-color: rgba(255, 204, 0, 0.2); /* Highlight on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8); /* Enhanced shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Project Box Image Styles */
+.project-box img {
+    width: 100%;
+    border-radius: 15px; /* Match border radius of the box */
+    transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+/* Image hover effect */
+.project-box:hover img {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Optional: Add a title for each project */
+.project-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0; /* Spacing around the title */
+    color: rgba(255, 204, 0, 1); /* Color of the title */
+}
+
+/* Optional: Add a description for each project */
+.project-description {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8); /* Softer color for description */
+}
+
+/* Glowing border animation for the central element */
+.welcome-line::after {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 5px;
+    margin: 20px auto 0;
+    background: linear-gradient(90deg, red, green, blue);
+    animation: glowingBorder 2s linear infinite;
+}
+
+/* Glowing border animation */
+@keyframes glowingBorder {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.6);
+    }
+}
+
+/* Magic Cursor Styles */
+.magic-cursor {
+    position: absolute;
+    z-index: 15; /* Higher z-index than stars and content */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.789); /* Subtle white cursor glow */
+}
+
+/* Star Background */
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7); /* Star color */
+    animation: moveStar linear infinite;
+}
+
+/* Contact  Section */
+/* Contact Section */
+.contact {
+    text-align: center;
+    margin: 50px 0;
+    color: white; /* Adjust based on your background */
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+.contact-button {
+    background-color: #333; /* Button background */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s; /* Animation effects */
+}
+
+.contact-button:hover {
+    background-color: #555; /* Change background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 18px; /* Adjust font size for the message */
+}
+
+
+
+@keyframes moveStar {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh); /* Move downwards */
+    }
+}
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
